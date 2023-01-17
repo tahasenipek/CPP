@@ -3,32 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msenipek <msenipek@student.42.fr>          +#+  +:+       +#+        */
+/*   By: merveipeksenipek <merveipeksenipek@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:04:53 by msenipek          #+#    #+#             */
-/*   Updated: 2023/01/10 21:39:22 by msenipek         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:17:04 by merveipekse      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include "Contact.hpp"
+#include <iomanip>
 
-void	Phonebook::addContact(Contact *cont)
+/* void	Phonebook::inputsizecont(Phonebook book)
 {
-	static int i = 0;
 	
-	if (i == 8)
+} */
+
+Phonebook::Phonebook(void)
+{
+	this->current_size = 0;
+}
+
+std::string	Phonebook::lstprnt(void)
+{
+	return (this->contac[0].getName());
+}
+
+
+void	Phonebook::addContact(Contact cont)
+{
+	if (current_size != 8)
 	{
-		i = 0;
-	}
-	if (i != 8)
-	{
-		
-		this->contac[i] = *cont;
-		if (i == 7)
+		contac[current_size] = cont;
+		if (current_size == 7)
 			std::cout << "Phonebook is full. If you enter another info. we'll delete oldest info." << std::endl;
 	}
-	i++;
+	current_size++;
+	std::cout << contac[0].getName() << std::endl;
+	std::cout << contac[0].getNickname();
 }
 
 int	Phonebook::searchlist(Contact *cont, std::string info)

@@ -9,13 +9,14 @@
 
 class Phonebook{
 	private:
-		Contact contac[7];
 		int	current_size;
+		Contact contac[7];
 	public:
-		void	addContact(Contact *contact);
-		int		searchlist(Contact *contact, std::string info);
-		//void	Contactsdisplay(Contact *contact);
-		void	returnsearchline(Contact *contact);
+		void		addContact(Contact contact);
+		int			searchlist(Contact *contact, std::string info);
+		std::string	lstprnt(void);
+		void		phonelistprint(Phonebook book, int i);
+		Phonebook();
 };
 
 int ft_strcmp(std::string def, const char *cmd);

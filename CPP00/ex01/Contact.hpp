@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <iomanip>
+#include <limits>
 
 class Contact{
     private:
@@ -17,6 +20,12 @@ class Contact{
 		void setNickname(std::string nickname);
 		void setNumber(std::string number);
 		void setSecret(std::string secretinfo);
+		void search(int index);
+		std::string getName(void);
+		std::string getSurname(void);
+		std::string getNickname(void);
+		std::string getNumber(void);
+		std::string getSecret(void);
 };
 
 
