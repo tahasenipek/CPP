@@ -33,7 +33,7 @@ int main()
     std::string info;
 	std::cout << "\033[1;31mYour Phonebook is empty\033[0m"<< std::endl;
 	std::cout << "\033[1;32m-----------------------\033[0m"<< std::endl;
-    while (info != "EXİT")
+    while (1)
     {
         std::cout << "\033[1;31mPlease enter a command..\033[0m"<< std::endl;
         std::cin >>info;
@@ -44,6 +44,8 @@ int main()
             book.Searching();
             book.printdetailcontacts();
         }
+        if (info == "EXİT")
+            return(0);
     }
-    return (0);
+    return (1);
 }

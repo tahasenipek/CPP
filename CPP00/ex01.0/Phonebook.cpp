@@ -16,16 +16,18 @@ Phonebook::~Phonebook()
 void    Phonebook::addList(Contacts tmp)
 {
     static int i = 0;
-    if (curren_size != 8)
+
+    if(i == 8)
+    {
+        i = 0;
+        std::cout << "\033[32m;Your List is full. Oldest entered data is deleted !!\033[0m;";
+    }
+    if (i <= 7)
     {
         this->list[i] = tmp;
         i++;
-        this->curren_size++;
-    }
-    if (this->curren_size == 8)
-    {
-        std::cout << "Your List is full. Oldest entered data is deleted !!";
-
+        if (this->curren_size < 8)
+            this->curren_size++;
     }
 };
 
@@ -105,46 +107,41 @@ void    Phonebook::printdetailcontacts(void)
         std::cout <<  "\033[1;31m Your input is not true please enter 1 to 8 number !! \033[0m" << std::endl;
 }
 
-int    Phonebook::sizecont(std::string info, int num)
+void    Phonebook::sizecont(std::string info, int num)
 {
-    int i = 0;
-    if (info.length() > 10)
-    {
-        while (i < 10)
-        {
-            std::cout << info[i];
-            i++;
-        }
-        std::cout << ".|";
-        if (num == nickname)
-             std::cout << std::endl;
-        return(0);
-    }
-    return(1);
+    if (info.length()<= 10)
+        gotoprint(info);
+    else if (info.length() > 10)
+        gotolenprint(info);
+    if (num == nickname)
+        std::cout << std::endl;
 }
 
-void    Phonebook::gotoprint(int i)
+void    Phonebook::gotolenprint(std::string info)
 {
-     std::cout << "|" << std::setw(10) <<std::right << (this->list[i].getName());
+    std::string tmp;
+  
+    tmp = info.substr(0,9).append(".");
+    gotoprint(tmp);
+}
+
+void    Phonebook::gotoprint(std::string info)
+{
+     std::cout << std::setw(10) <<std::right << info << "|";
 }
 
 void Phonebook::infoprint()
 {
     int index = 1;
-    std::string tmp;
 
-    for(int i = 0; i < this->curren_size ; i++)
+    for(int i = 0; i < this->curren_size; i++)
     {
-        std::cout << "|" << std::setw(10) <<std::right << index++ << "|";
-        if (sizecont(this->list[i].getName(), firstname))
-            gotoprint(i);
-        if (sizecont(this->list[i].getSurname(), surname))
-            std::cout << "|" << std::setw(10) <<std::right << (this->list[i].getSurname());
-        if (sizecont(this->list[i].getNickname(),nickname))
-            std::cout << "|" << std::setw(10) <<std::right << (this->list[i].getNickname()) << "|" << std::endl;
+        std::cout << "|" << std::setw(10) << std::right << index++ << "|";
+        sizecont(this->list[i].getName(), firstname);
+        sizecont(this->list[i].getSurname(), surname);
+        sizecont(this->list[i].getNickname(), nickname);
     }
 }
-
 
 void Phonebook::Searching()
 {   
@@ -154,11 +151,11 @@ void Phonebook::Searching()
 	else
 	{
         std::cout << "------------- All Phonebook "<<this->curren_size<<""" ---------------" << std::endl;
-        /* std::cout << "|" << std::setw(10) << std::right << "Index";
+        std::cout << "|" << std::setw(10) << std::right << "Index";
         std::cout << "|" << std::setw(10) << std::right << "First Name";
         std::cout << "|" << std::setw(10) << std::right << "Last Name";
         std::cout << "|" << std::setw(10) << std::right << "Nick Name";
-        std::cout << "|" << std::endl; */
+        std::cout << "|" << std::endl;
         infoprint();
 	}
 }

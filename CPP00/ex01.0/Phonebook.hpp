@@ -8,7 +8,7 @@
 class Phonebook
 {
 private:
-    Contacts list[7];
+    Contacts list[8];
     int curren_size;
 public:
     Phonebook(/* args */);
@@ -19,8 +19,9 @@ public:
     void    printdetailcontacts(void);
     void    extrainfoprint(int index);
     void    infoprint();
-    void    gotoprint(int i);
-    int     sizecont(std::string info, int num);      
+    void    gotoprint(std::string info);
+    void    gotolenprint(std::string info);
+    void     sizecont(std::string info, int num);      
 };
 
 enum numbers
