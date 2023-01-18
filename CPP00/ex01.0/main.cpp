@@ -40,7 +40,10 @@ int main()
         if (info == "ADD")
             add_contacts(&book);
         if (info == "SEARCH")
+        {
             book.Searching();
+            book.printdetailcontacts();
+        }
     }
     return (0);
 }

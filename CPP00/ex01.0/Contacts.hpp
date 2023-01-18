@@ -22,6 +22,7 @@ public:
     std::string    getSecret(void);
     std::string    getName(void);
     std::string    getSurname(void);
+    std::string    getNumber(void);
     std::string    getNickname(void);
 };
 

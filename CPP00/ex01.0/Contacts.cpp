@@ -48,6 +48,12 @@ std::string    Contacts::getNickname(void)
     return(this->nickname);
 }
 
+std::string    Contacts::getNumber(void)
+{
+    return(this->number);
+}
+
+
 std::string    Contacts::getSecret(void)
 {
     return(this->secret);
