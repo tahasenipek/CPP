@@ -7,12 +7,12 @@ class HumanB
 {
 private:
     string  _name;
-    string  _weapons;
+    Weapon  *_weapons;
 public:
-    HumanB(string name, Weapon club);
+    HumanB(string name);
     ~HumanB();
     void attack(void);
+    void setWeapon(Weapon &);
 };
-
 
 #endif

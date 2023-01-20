@@ -6,9 +6,9 @@
 class HumanA{
 private:
     string  _name;
-    string  _weapons;
+    Weapon  &_weapons;
 public:
-    HumanA(string name, Weapon club);
+    HumanA(string, Weapon &);
     ~HumanA();
     void attack(void);
 };

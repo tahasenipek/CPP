@@ -12,10 +12,11 @@ class Weapon
 private:
     string _type;
 public:
-    Weapon(string name);
+    Weapon();
+     Weapon(string type);
     ~Weapon();
     const string &getType();
-    string &setType(void) const;
+    void setType(string name);
 };
 
 

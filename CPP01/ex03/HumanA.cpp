@@ -1,9 +1,8 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(string name, Weapon club)
+HumanA::HumanA(string name, Weapon &club) : _name(name), _weapons(club)
 {
-    _name = name;
-    _weapons = club.getType();
+
 }
 
 HumanA::~HumanA()
@@ -12,5 +11,5 @@ HumanA::~HumanA()
 
 void    HumanA::attack(void)
 {
-    cout << _name << "attack with their" << _weapons;
+    cout << _name << " attack with their " << _weapons.getType() << endl;
 }

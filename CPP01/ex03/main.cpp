@@ -4,9 +4,23 @@
 
 int main()
 {
-    Weapon clup = Weapon("crude spiked club");
-    
-    HumanA bob("Bob", clup);
-    bob.attack();
+    {
+        Weapon clup = Weapon("crude spiked club");
+        
+        HumanA bob("Bob", clup);
+        bob.attack();
+        clup.setType("some other type of club");
+        bob.attack();
+    }
 
+    {
+        Weapon club = Weapon("crube spiked club");
+
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
+    system("Leaks weapon");
 }
