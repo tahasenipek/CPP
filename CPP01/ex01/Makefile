@@ -2,7 +2,7 @@ NAME  = Zombie
 SRC   = main.cpp Zombie.cpp zombieHorde.cpp
 OBJ   = $(SRC:.cpp=.o)
 CC    = c++
-CFLAG = -Wall -Wextra -Werror -std=c++98
+CFLAG = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 
 all		: $(NAME)
 
