@@ -15,4 +15,6 @@ clean   :
 fclean   : 
 			rm -rf $(OBJ)
 			rm -rf $(NAME)
-re      :  re  all
+			find -not -name "*.replace" -delete
+
+re      :	re  all
