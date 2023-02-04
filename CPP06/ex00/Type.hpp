@@ -11,12 +11,12 @@ public:
     Type(double value);
     ~Type();
     Type(const Type &s);
+    Type();
     Type    &operator=(const Type &);
     char asChar() const;
     int asInt() const;
     float asFloat() const;
     double asDouble() const;
-
 private:
     double value;
 };

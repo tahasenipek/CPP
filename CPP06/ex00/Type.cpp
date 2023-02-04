@@ -6,10 +6,14 @@ Type::~Type()
 {
 }
 
-Type::Type(const Type &s)
+Type::Type(){
+}
+
+Type::Type(const Type &copy) : value(copy.value)
 {
 
 }
+
 Type    &Type::operator=(const Type &s)
 {
     this->value = s.value;
