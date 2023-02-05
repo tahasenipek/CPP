@@ -20,13 +20,3 @@ int main()
     
 	return (0);
 }
-
-
-
-
-    /* ClapTrap crt00("Jimmy");
-    ClapTrap crt01("Helly");
-    
-    crt00.attack("Helly");
-    crt01.attack("Jimmy");
-    crt00.takeDamage(3); */

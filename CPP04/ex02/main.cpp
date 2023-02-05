@@ -17,6 +17,8 @@ int main()
         for (int i = 9; i >= 0; i--)
             delete arr[i];
     }
+	Animal *tmp;
+	tmp->makeSound(); 
 	//system ("Leaks zoo");
     return 0;
 }

@@ -4,7 +4,7 @@
 
 int main()
 {
-    {
+	 {
         Animal *arr[10];
 		for (int i= 0; i < 10; i++)
 		{
@@ -17,6 +17,6 @@ int main()
         for (int i = 9; i >= 0; i--)
             delete arr[i];
     }
-	//system ("Leaks zoo");
+ 	//system ("Leaks zoo");
     return 0;
 }
