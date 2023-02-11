@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include "Contacts.hpp"
 
 
-void    add_contacts(Phonebook *book)
+void    add_contacts(PhoneBook *book)
 {
     Contacts cont;
     std::string info;
@@ -29,9 +29,9 @@ void    add_contacts(Phonebook *book)
 
 int main()
 {
-    Phonebook book;
+    PhoneBook book;
     std::string info;
-	std::cout << "\033[1;31mYour Phonebook is empty\033[0m"<< std::endl;
+	std::cout << "\033[1;31mYour PhoneBook is empty\033[0m"<< std::endl;
 	std::cout << "\033[1;32m-----------------------\033[0m"<< std::endl;
     while (1)
     {
@@ -42,9 +42,10 @@ int main()
         if (info == "SEARCH")
         {
             book.Searching();
-            book.printdetailcontacts();
+            if (book.SearchHaveNot())
+                book.printdetailcontacts();
         }
-        if (info == "EXİT")
+        if (info == "EXIT")
             return(0);
     }
     return (1);

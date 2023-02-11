@@ -1,19 +1,19 @@
 #include <iostream>
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include "Contacts.hpp"
 #include <limits.h>
 #include <iomanip>
 
-Phonebook::Phonebook(/* args */)
+PhoneBook::PhoneBook(/* args */)
 {
     this->curren_size = 0;
-};
+}
 
-Phonebook::~Phonebook()
+PhoneBook::~PhoneBook()
 {
-};
+}
 
-void    Phonebook::addList(Contacts tmp)
+void    PhoneBook::addList(Contacts tmp)
 {
     static int i = 0;
 
@@ -29,9 +29,17 @@ void    Phonebook::addList(Contacts tmp)
         if (this->curren_size < 8)
             this->curren_size++;
     }
+}
+
+int    PhoneBook::SearchHaveNot(void)
+{
+    if (this->curren_size != 0)
+            return (1);
+    else
+        return (0);
 };
 
-void    Phonebook::extrainfoprint(int index)
+void    PhoneBook::extrainfoprint(int index)
 {
     std::cout << "İndex: " << index << std::endl;
     std::cout << "Firts name: " << this->list[index - 1].getName() << std::endl;
@@ -41,7 +49,7 @@ void    Phonebook::extrainfoprint(int index)
     std::cout << "Secret information:" << this->list[index - 1].getSecret() << std::endl;
 }
 
-void    Phonebook::printdetailcontacts(void)
+void    PhoneBook::printdetailcontacts(void)
 {
     std::string info;
     
@@ -107,7 +115,7 @@ void    Phonebook::printdetailcontacts(void)
         std::cout <<  "\033[1;31m Your input is not true please enter 1 to 8 number !! \033[0m" << std::endl;
 }
 
-void    Phonebook::sizecont(std::string info, int num)
+void    PhoneBook::sizecont(std::string info, int num)
 {
     if (info.length()<= 10)
         gotoprint(info);
@@ -117,7 +125,7 @@ void    Phonebook::sizecont(std::string info, int num)
         std::cout << std::endl;
 }
 
-void    Phonebook::gotolenprint(std::string info)
+void    PhoneBook::gotolenprint(std::string info)
 {
     std::string tmp;
   
@@ -125,12 +133,12 @@ void    Phonebook::gotolenprint(std::string info)
     gotoprint(tmp);
 }
 
-void    Phonebook::gotoprint(std::string info)
+void    PhoneBook::gotoprint(std::string info)
 {
      std::cout << std::setw(10) <<std::right << info << "|";
 }
 
-void Phonebook::infoprint()
+void PhoneBook::infoprint()
 {
     int index = 1;
 
@@ -143,14 +151,14 @@ void Phonebook::infoprint()
     }
 }
 
-void Phonebook::Searching()
+void PhoneBook::Searching()
 {   
 
     if ( this->curren_size == 0)
 			std::cout << "Your search is not true. Firstly you must be enter ADD commant!!" << std::endl;
 	else
 	{
-        std::cout << "------------- All Phonebook "<<this->curren_size<<""" ---------------" << std::endl;
+        std::cout << "------------- All PhoneBook "<<this->curren_size<<""" ---------------" << std::endl;
         std::cout << "|" << std::setw(10) << std::right << "Index";
         std::cout << "|" << std::setw(10) << std::right << "First Name";
         std::cout << "|" << std::setw(10) << std::right << "Last Name";
