@@ -41,6 +41,29 @@ PmergeMe::PmergeMe(int ac, char** av)
         std::cout << "The sorted sequences are not equal." << std::endl;
 }
 
+PmergeMe::PmergeMe(const PmergeMe& other)
+{
+    // Copy constructor implementation
+    inputDeque = other.inputDeque;
+    inputList = other.inputList;
+}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& other)
+{
+    if (this != &other)
+    {
+        // Assignment operator implementation
+        inputDeque = other.inputDeque;
+        inputList = other.inputList;
+    }
+    return *this;
+}
+
+PmergeMe::~PmergeMe()
+{
+    // Destructor implementation
+}
+
 template <typename Container>
 void PmergeMe::mergeInsertSort(Container& arr)
 {

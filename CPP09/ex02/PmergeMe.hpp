@@ -25,6 +25,9 @@ class PmergeMe
 {
 public:
     PmergeMe(int ac, char** av);
+    PmergeMe(const PmergeMe& other);
+    PmergeMe& operator=(const PmergeMe& other);
+    ~PmergeMe();
 
 private:
     template <typename Container>
