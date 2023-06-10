@@ -34,4 +34,4 @@ private:
     std::list<int> inputList;
 };
 
-#endif // PMERGEME_H
+#endif

@@ -45,7 +45,7 @@ template <typename Container>
 void PmergeMe::mergeInsertSort(Container& arr)
 {
     typename Container::iterator it1, it2;
-    for (it1 = std::next(arr.begin()); it1 != arr.end(); ++it1)
+    for (it1 = arr.begin(); it1 != arr.end(); ++it1)
     {
         int temp = *it1;
         it2 = it1;
