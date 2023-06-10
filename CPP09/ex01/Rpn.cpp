@@ -75,7 +75,7 @@ void Rpn::calculate(std::string input)
 		}
 		else
 		{
-			std::cout << "Error" << std::endl;
+			std::cerr << "Error" << std::endl;
 			return;
 		}
 	}
@@ -87,7 +87,7 @@ void Rpn::calculate(std::string input)
 	}
 	else
 	{
-		std::cout << "Invalid input." << std::endl;
+		std::cerr << "Invalid input." << std::endl;
 	}
 }
 
