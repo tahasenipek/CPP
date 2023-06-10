@@ -22,15 +22,11 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
     if (this == &other) {
         return *this;
     }
-    // Diğer veri elemanlarının kopyalanması veya atanması burada yapılabilir
     return *this;
 }
 
-
-// Whitespace characters to remove (space, tab, newline, carriage return)
 const char* WHITESPACE = " \t\n\r";
 
-// Trim whitespace characters from the beginning of a string
 std::string& ltrim(std::string& s) {
     size_t start = s.find_first_not_of(WHITESPACE);
     if (start != std::string::npos) {
@@ -39,7 +35,6 @@ std::string& ltrim(std::string& s) {
     return s;
 }
 
-// Trim whitespace characters from the end of a string
 std::string& rtrim(std::string& s) {
     size_t end = s.find_last_not_of(WHITESPACE);
     if (end != std::string::npos) {
@@ -48,7 +43,6 @@ std::string& rtrim(std::string& s) {
     return s;
 }
 
-// Trim whitespace characters from both ends of a string
 std::string& trim(std::string& s) {
     return ltrim(rtrim(s));
 }
