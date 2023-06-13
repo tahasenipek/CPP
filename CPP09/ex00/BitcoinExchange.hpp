@@ -21,12 +21,14 @@ public:
     BitcoinExchange& operator=(const BitcoinExchange& other);
     std::vector<std::string> splitString(const std::string& str, char delimiter);
     void processData(const char *filename);
+    int datecontrol(std::string date);
+    bool addcontrol(std::string date);
+    int  stringcontrol(std::string year, std::string month, std::string day);
     void setData(std::string date, double value);
     int openAndReadFile(const char* filename);
-
     ~BitcoinExchange();
 };
 
 
 
-#endif // BITCOINEXCHANGE_HPP
+#endif 

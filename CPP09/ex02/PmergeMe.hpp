@@ -32,7 +32,6 @@ public:
 private:
     template <typename Container>
     void mergeInsertSort(Container& arr);
-
     std::deque<int> inputDeque;
     std::list<int> inputList;
 };

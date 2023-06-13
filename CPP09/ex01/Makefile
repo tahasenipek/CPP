@@ -1,4 +1,4 @@
-NAME   = Rpn
+NAME   = RPN
 SRC    = main.cpp Rpn.cpp
 OBJ    = $(SRC:.cpp=.o)
 CC     = c++
